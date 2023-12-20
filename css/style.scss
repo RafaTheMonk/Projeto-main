@@ -1,0 +1,362 @@
+@charset "UTF-8";
+/* Icones */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+/* Fontes */
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap");
+:root {
+  --azul100: #1A1A1A; /* Um azul mais profundo */
+  --azul80: #333333;  /* Um azul médio-escuro */
+  --azul10: #666666;  /* Um azul claro acinzentado */
+  --azul1: #999999;   /* Um azul muito claro, quase cinza */
+  --preto100: #000000; /* Quase preto, muito escuro */
+  --preto80: #282828;  /* Cinza escuro */
+  --preto50: #505050;  /* Cinza médio */
+  --preto30: #B8B8B8;  /* Cinza claro */
+  --preto10: #D9D9D9;  /* Cinza muito claro */
+}
+
+
+* {
+  font-family: "Inter Tight", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  letter-spacing: 1px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Martel Sans", sans-serif;
+  font-weight: 800;
+}
+
+body {
+  color: var(--preto100);
+}
+
+h1 {
+  font-size: 4.209rem;
+}
+
+h2 {
+  font-size: 3.157rem;
+}
+
+h3 {
+  font-size: 2.369rem;
+}
+
+h4 {
+  font-size: 1.777rem;
+}
+
+h5 {
+  font-size: 1.333rem;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button, input {
+  outline: none;
+  border: none;
+  font-size: 1em;
+}
+
+/* GERAIS */
+.botao {
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  border-radius: 1.5em;
+  transition: 0.2s;
+  text-decoration: none;
+  transform: scale(1);
+}
+.botao.preto {
+  border: 0.1em solid var(--preto100);
+}
+.botao.branco {
+  border: 0.1em solid var(--azul1);
+}
+.botao.azul {
+  background-color: var(--azul100);
+  color: var(--azul1);
+  box-shadow: 0.01em 0.01em 0.25em var(--preto50);
+}
+.botao:hover {
+  transform: scale(1.075);
+}
+
+.input {
+  height: 1.75em;
+  padding: 0.25em 0.5em;
+  outline: none;
+  border-radius: 1.5em;
+}
+.input.branco {
+  border: 0.1em solid var(--preto100);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form div {
+  display: flex;
+  margin: 2em;
+  justify-content: space-between;
+  width: min(25em, 90%);
+  align-items: center;
+}
+form div input {
+  width: 20em;
+}
+
+table {
+  width: min(45em, 95%);
+}
+table tr {
+  height: 2.5em;
+}
+
+/* ESPAÇAMENTO DE SEÇÕES*/
+main, footer {
+  margin-top: 8vh;
+}
+
+main {
+  min-height: 63.2vh;
+}
+
+section {
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+  z-index: 1;
+}
+
+.divisor {
+  position: absolute;
+  z-index: -1;
+  aspect-ratio: 900/200;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../images/divisor.svg");
+}
+
+.hero {
+  padding-bottom: 4vh;
+}
+
+.ofertas {
+  padding-top: 20vh;
+}
+
+/* HOME */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 8vh;
+  background-color: var(--azul100);
+  color: var(--azul1);
+}
+.header .conteudo {
+  width: 90%;
+  height: 100%;
+  margin: auto auto;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 2fr 1fr;
+  -moz-column-gap: 2em;
+       column-gap: 2em;
+  justify-items: stretch;
+}
+.header .conteudo .links_desktop {
+  display: flex;
+  justify-content: space-between;
+}
+.header .conteudo .conta {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.header .conteudo .conta p {
+  text-decoration: underline;
+}
+
+.hero {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, #ffffff 0%, #e5faff 100%);
+}
+.hero .conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  gap: 2em;
+  width: min(45em, 90%);
+}
+
+.ofertas {
+  text-align: center;
+}
+.ofertas .conteudo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  justify-items: center;
+  -moz-column-gap: 2em;
+       column-gap: 2em;
+  row-gap: 2em;
+}
+.ofertas .conteudo .card {
+  padding: 0.25em 0.5em;
+  border: 0.1em solid var(--preto100);
+  border-radius: 1.5em;
+  width: 25em;
+}
+.ofertas .conteudo .card div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.consultar {
+  text-align: center;
+}
+.consultar .conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.consultar .conteudo button {
+  font-size: 1.12em;
+  letter-spacing: 1px;
+}
+
+.todas {
+  text-align: center;
+}
+.todas .conteudo {
+  margin: 0 auto;
+  border: 0.1em solid var(--preto100);
+  width: min(45em, 95%);
+}
+.todas .conteudo .botao {
+  padding: 0.2em 0.2em;
+}
+
+.rodape {
+  padding: 2em 0;
+  background-color: var(--preto80);
+  color: var(--azul1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.rodape .conteudo {
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  width: 95%;
+  margin-left: auto;
+}
+.rodape .conteudo div {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* LOGIN */
+.login, .logon {
+  margin-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone_menu {
+  font-size: 2em;
+  justify-self: end;
+  cursor: pointer;
+  position: absolute;
+  visibility: hidden;
+}
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 18em;
+  z-index: 1000;
+  background-color: var(--azul100);
+  font-weight: 600;
+}
+.sidebar ul {
+  list-style: none;
+  height: 90%;
+  width: 90%;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+.sidebar ul .icone_fechar {
+  align-self: center;
+  cursor: pointer;
+}
+.sidebar ul li {
+  display: inline-flex;
+  gap: 1em;
+  align-items: center;
+}
+.sidebar ul i {
+  font-size: 2em;
+}
+.sidebar ul .sidebar-conta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  gap: 1.5em;
+}
+
+.sidebar {
+  transform: translateX(0);
+  transition: 0.25s;
+}
+
+.sidebar.hidden {
+  transform: translateX(200%);
+}
+
+@media screen and (max-width: 810px) {
+  .links_desktop, .conta {
+    position: absolute;
+    visibility: hidden;
+  }
+  .header .conteudo {
+    grid-template-columns: 3fr 1fr;
+  }
+  .icone_menu {
+    position: relative;
+    visibility: visible;
+  }
+}/*# sourceMappingURL=style.css.map */
